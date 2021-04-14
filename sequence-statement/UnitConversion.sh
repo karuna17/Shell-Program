@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 width=40
 length=40
