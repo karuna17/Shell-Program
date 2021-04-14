@@ -1,5 +1,7 @@
 #!/bin/bash
 
-width=4
-length=4
-echo - | awk '{print  "%.2f\n", '$sqft_area_plot*$conversionmultiplier'}'
+width=40
+length=40
+conversionMultiplier=0.0929
+sqftAreaPlot=$(($length*$width))
+echo - | awk '{print  "%.2f\n", '$sqftAreaPlot*$conversionMultiplier'}'
