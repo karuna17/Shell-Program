@@ -1,14 +1,10 @@
 #!/bin/bash -x
 
 read -p 'Enter any year:' year
-a= 'expr $year%4'
-b= 'expr $year%100'
-c= 'expr $year%400'
 
-
-if [ $a -eq 0 -a $b -ne 0 -o $c -eq 0 ]
+if [ $((year % 4)) -eq 0 -a $((year % 100)) -ne 0 -o $((year % 400)) -eq 0 ]
 then
-echo $year is Leap Year
+   echo $year is Leap Year
 else
-echo $year is Not Leap Year
+   echo $year is Not Leap Year
 fi

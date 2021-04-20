@@ -2,18 +2,25 @@
 
 read -p "Enter any number: " num
 
-rem=0
-rev=""
+function Palindrome()
+{
 temp=$num
-while [ $num -gt 0 ]
-do 
-  rem$(($num%10))
+rev=0
+while [ $num -ne 0 ]
+do
+  rem=$(($num%10))
+  rev=$(($rem+$rev*10))
   num=$(($num/10))
-  rev=$(echo ${rev}${rem})
 done
-if[ $temp -eq $rev ]
-then 
+echo Values $rev  $temp
+if [ $temp -eq $rev ]
+then
   echo Number is palindrome
 else
   echo Number is not palindrome
 fi
+}
+
+#calling of function
+Palindrome
+
