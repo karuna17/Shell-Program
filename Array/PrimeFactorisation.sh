@@ -1,5 +1,5 @@
 #!/bin/bash
-
+count=0
 read -p "Enter any number: " num
 
 for ((i=1; i<=$num; i++))
@@ -8,10 +8,7 @@ do
  then 
   echo $i
   num=$((num / i))
-  for ((j=0; j<=$num; j++))
-  do
-   arr[j]=$i
-  done
+   arr[((count++))]=$i
   fi
 done
  echo Array: ${arr[@]}
